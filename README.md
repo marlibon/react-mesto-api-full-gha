@@ -10,8 +10,33 @@
 
 ## Ссылки на проект
 
-IP-адрес <62.84.116.218>
+IP 62.84.116.218
 
 Frontend https://zagriev.nomoredomains.monster
 
 Backend https://api.zagriev.nomoredomains.monster
+
+## Используемые технологии
+
+Бэкенд:
+
+- NodeJS
+- Express
+- MongoDB
+
+Фронтенд:
+
+- React
+- React Router
+
+## Запуск проекта:
+
+Фронтенд:
+
+`npm run start` — запускает сервер в dev-режиме
+`npm run build` — собирает приложение
+
+Бэкенд:
+
+`npm run start` — запускает сервер
+`npm run dev` — запускает сервер с hot-reload
