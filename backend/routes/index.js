@@ -10,7 +10,6 @@ const {
   NotFoundError,
 } = require('../utils/handleErrors');
 router.get('/crash-test', (req, res) => {
-  res.send({ message: 'Сервер сейчас упадёт' });
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);

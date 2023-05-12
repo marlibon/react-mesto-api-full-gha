@@ -10,7 +10,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 62.84.116.218
+IP-адрес <62.84.116.218>
 
 Frontend https://zagriev.nomoredomains.monster
 
