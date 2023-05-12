@@ -1,0 +1,13 @@
+.header__auth {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0 0;
+}
+@media screen and (max-width: 390px) {
+  .header__auth {
+    display: none;
+  }
+}

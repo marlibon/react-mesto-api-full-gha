@@ -1,0 +1,10 @@
+.page__navigation-link {
+  color: #fff;
+  margin: 0;
+  padding: 0 4px 0 4px;
+  text-decoration: none;
+}
+.page__navigation-link:hover {
+  opacity: 0.6;
+  transition: all 0.3s;
+}

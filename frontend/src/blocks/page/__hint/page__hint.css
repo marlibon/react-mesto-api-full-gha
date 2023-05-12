@@ -1,0 +1,14 @@
+.page__hint {
+  margin: 0;
+  padding: 15px 0 0 0;
+  color: #fff;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+@media screen and (max-width: 390px) {
+  .page__hint {
+    padding-top: 19px;
+  }
+}

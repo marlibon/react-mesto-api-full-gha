@@ -1,0 +1,13 @@
+.page__content {
+  width: calc(100% - 2*200px);
+}
+@media screen and (max-width: 1058px) {
+  .page__content {
+    width: calc(100% - 2*60px);
+  }
+}
+@media screen and (max-width: 776px) {
+  .page__content {
+    width: calc(100% - 2*20px);
+  }
+}

@@ -1,0 +1,8 @@
+.form_type_auth {
+  padding-bottom: 0;
+}
+@media screen and (max-width: 390px) {
+  .form_type_auth {
+    width: 260px;
+  }
+}

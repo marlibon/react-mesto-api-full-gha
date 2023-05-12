@@ -1,0 +1,8 @@
+.profile__avatar-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    grid-area: profile__avatar;
+}

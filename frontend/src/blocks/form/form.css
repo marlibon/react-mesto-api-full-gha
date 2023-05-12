@@ -1,0 +1,18 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 36px 36px 37px 36px;
+  width: 358px;
+  box-sizing: content-box;
+}
+@media screen and (max-width: 680px) {
+  .form {
+    width: 310px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .form {
+    width: 238px;
+    padding: 22px 22px 24px 22px;
+  }
+}

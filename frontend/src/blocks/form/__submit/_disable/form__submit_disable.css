@@ -1,0 +1,10 @@
+.form__submit_disable {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000000;
+  opacity: 0.2;
+}
+.form__submit_disable:hover {
+
+  opacity: 0.2;
+}

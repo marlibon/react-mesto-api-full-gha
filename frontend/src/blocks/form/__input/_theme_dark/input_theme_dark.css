@@ -1,0 +1,16 @@
+.input_theme_dark {
+  background-color: #000;
+  border-bottom: 2px solid #cccccc;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.input_theme_dark::placeholder {
+  margin: 0;
+  padding: 0;
+  color: #cccccc;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 17px;
+}

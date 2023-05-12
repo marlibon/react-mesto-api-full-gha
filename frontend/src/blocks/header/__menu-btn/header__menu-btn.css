@@ -1,0 +1,19 @@
+.header__menu-btn {
+  display: none;
+}
+
+@media screen and (max-width: 390px) {
+  .header__menu-btn {
+    background-color: transparent;
+    border: none;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 28px;
+    justify-self: flex-end;
+    align-self: center;
+    grid-area: button;
+  }
+}

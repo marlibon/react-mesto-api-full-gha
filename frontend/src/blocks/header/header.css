@@ -1,0 +1,27 @@
+.header {
+  margin-top: 45px;
+  border-bottom: 1px solid #545454;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: calc(100% - 2 * 200px);
+}
+@media screen and (max-width: 1058px) {
+  .header {
+    width: calc(100% - 2 * 60px);
+  }
+}
+@media screen and (max-width: 776px) {
+  .header {
+    width: calc(100% - 2 * 20px);
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .header {
+    margin-top: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}

@@ -1,0 +1,11 @@
+.header__auth_type_mobile {
+  padding: 42px 0 40px;
+  border-bottom: 1px solid #545454;
+  height: 142px;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

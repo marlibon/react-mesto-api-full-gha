@@ -1,0 +1,11 @@
+.popup__notify-image {
+  margin: 0 auto;
+  display: block;
+  padding: 60px 0 32px;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 368px) {
+.popup__notify-image {
+  padding: 50px 0 40px;
+  }
+}

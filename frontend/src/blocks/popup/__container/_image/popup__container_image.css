@@ -1,0 +1,6 @@
+.popup__container_image {
+  max-width: 75vw;
+  max-height: 75vh;
+  min-width: 240px;
+  background-color: transparent;
+}
