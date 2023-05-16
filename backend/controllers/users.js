@@ -8,7 +8,7 @@ const {
 } = require('../utils/handleErrors');
 const { JWT_SECRET } = require('../config');
 
-module.exports.getCurrentUserData = (req, res) => {
+module.exports.getCurrentUserData = (req, res, next) => {
   const { _id } = req.user;
   User.findById({ _id })
     .then((user) => {
@@ -18,15 +18,15 @@ module.exports.getCurrentUserData = (req, res) => {
         throw new NotFoundError('Пользователь не найден');
       }
     })
-    .catch((err) => handleErrors(err, res));
+    .catch(next);
 };
 
-module.exports.getUsers = (req, res) => {
+module.exports.getUsers = (req, res, next) => {
   User.find({})
     .then((users) => res.send(users))
-    .catch((err) => handleErrors(err, res));
+    .catch(next);
 };
-module.exports.getUserDataById = (req, res) => {
+module.exports.getUserDataById = (req, res, next) => {
   const _id = req.params.userId;
   User.findById({ _id })
     .then((user) => {
@@ -36,10 +36,10 @@ module.exports.getUserDataById = (req, res) => {
         throw new NotFoundError('Пользователь не найден');
       }
     })
-    .catch((err) => handleErrors(err, res));
+    .catch(next);
 };
 
-module.exports.createUser = (req, res) => {
+module.exports.createUser = (req, res, next) => {
   const {
     email, password, name, about, avatar,
   } = req.body;
@@ -48,14 +48,14 @@ module.exports.createUser = (req, res) => {
       email, password: hash, name, about, avatar,
     })
       .then((user) => res.status(HTTP_STATUS_CREATED).send(user))
-      .catch((err) => handleErrors(err, res)));
+      .catch(next));
 };
 
 module.exports.logout = (_, res) => {
   res.clearCookie('token').send({ message: 'Вы вышли из профиля' });
 };
 
-module.exports.login = (req, res) => {
+module.exports.login = (req, res, next) => {
   const { email, password } = req.body;
   User.findUserByCredentials(email, password)
     .then((user) => {
@@ -68,16 +68,11 @@ module.exports.login = (req, res) => {
         })
         .send({ token });
     })
-    .catch((err) => {
-      // ошибка аутентификации
-      res
-        .status(401)
-        .send({ message: err.message });
-    });
+    .catch(next);
 };
 
 // функция для обновления данных пользователя
-const updateUser = (req, res, updateData) => {
+const updateUser = (req, res, next, updateData) => {
   User.findByIdAndUpdate(
     req.user._id,
     updateData,
@@ -90,17 +85,17 @@ const updateUser = (req, res, updateData) => {
         throw new NotFoundError('Пользователь не найден');
       }
     })
-    .catch((err) => handleErrors(err, res));
+    .catch(next);
 };
 
 // декоратор для обновления имени и описания пользователя
-module.exports.updateUserData = (req, res) => {
+module.exports.updateUserData = (req, res, next) => {
   const { name, about } = req.body;
-  updateUser(req, res, { name, about });
+  updateUser(req, res, next, { name, about });
 };
 
 // декоратор для обновления аватара пользователя
-module.exports.updateUserAvatar = (req, res) => {
+module.exports.updateUserAvatar = (req, res, next) => {
   const { avatar } = req.body;
-  updateUser(req, res, { avatar });
+  updateUser(req, res, next, { avatar });
 };

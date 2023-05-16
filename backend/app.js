@@ -10,6 +10,7 @@ const { errors } = require('celebrate');
 const { PORT, BASE_PATH, MONGODB_URI } = require('./config'); // переменные окружения
 const routes = require('./routes/index');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { handleErrors } = require('./utils/handleErrors');
 
 // распарсим данные, которые пришли
 app.use(express.json());
@@ -44,6 +45,11 @@ app.use(errorLogger);
 
 // обработка ошибок celebrate
 app.use(errors());
+
+//ловим ошибки в миддлвэр
+app.use((err, req, res, next) => {
+  handleErrors(err, res)
+});
 
 // выводим index.html при обращении через браузер
 app.use(express.static(path.join(__dirname, 'public')));

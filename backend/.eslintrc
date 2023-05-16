@@ -7,7 +7,7 @@
         "allow": ["_id"]
       }
     ],
-    "import/no-extraneous-dependencies": "off",
-    "no-console": "off"
+    "import/no-extraneous-dependencies": "off"
+    // "no-console": "off"
   }
 }
